@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    display: none;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 30px 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* =========================
+   COULEURS
+========================= */
+
+#page1 {
+    background: #9ddcff;
+}
+
+#page2 {
+    background: #ffb6d9;
+}
+
+#page3 {
+    background: #d8b08c;
+}
+
+#page4 {
+    background: #fffafa;
+}
+
+#page5 {
+    background: #dff5ff;
+}
+
+#page6 {
+    background: #ffe1ed;
+}
+
+#page7 {
+    background: #ead4c0;
+}
+
+#page8 {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #ffeaf2
+    );
+}
+
+
+/* =========================
+   COEURS
+========================= */
+
+.heart {
+    position: absolute;
+    font-size: 35px;
+    opacity: 0.2;
+    pointer-events: none;
+
+    animation: floating 5s infinite ease-in-out;
+}
+
+.heart1 {
+    top: 8%;
+    left: 8%;
+}
+
+.heart2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.heart3 {
+    bottom: 15%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.heart4 {
+    bottom: 8%;
+    right: 12%;
+    animation-delay: 3s;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TEXTES
+========================= */
+
+h1 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+p {
+    max-width: 600px;
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+button {
+    border: none;
+    border-radius: 30px;
+
+    padding: 14px 28px;
+    margin: 8px;
+
+    background: #d6336c;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   MOT DE PASSE
+========================= */
+
+#password {
+    width: min(85%, 300px);
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    outline: none;
+
+    margin-bottom: 10px;
+
+    position: relative;
+    z-index: 5;
+}
+
+#passwordMessage {
+    min-height: 30px;
+
+    font-weight: bold;
+
+    color: #d6336c;
+}
+
+
+/* =========================
+   QUESTION 1
+========================= */
+
+#question1Message {
+    min-height: 35px;
+
+    color: #d6336c;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ZONE D'ÉCRITURE
+========================= */
+
+#heartText {
+    width: min(90%, 500px);
+
+    height: 160px;
+
+    resize: none;
+
+    border: 2px solid #d6336c;
+
+    border-radius: 18px;
+
+    padding: 15px;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================
+   MESSAGE ÉPREUVE 3
+========================= */
+
+#thankYou {
+    display: none;
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e5,
+            #fff1f7
+        );
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 30px;
+
+    z-index: 20;
+}
+
+.thankIcon {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+
+    color: #d6336c;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    margin-bottom: 20px;
+
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================
+   QCM
+========================= */
+
+.choices {
+    width: min(92%, 550px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.choice {
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.choice input {
+    margin-right: 10px;
+}
+
+
+/* =========================
+   PAGE FINALE
+========================= */
+
+#page8 {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.finalHeart {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #ffd6e5;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    color: #d6336c;
+
+    animation: beat 1.5s infinite;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   GALERIE 2 × 2
+========================= */
+
+.gallery {
+    width: min(94%, 600px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.photoBox {
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.10);
+}
+
+.photoBox img {
+    width: 100%;
+
+    aspect-r
