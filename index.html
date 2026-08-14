@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pour mon bouboudy ❤️</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <script>
+  // Remplacez 'Mamycodepro' par le mot de passe de votre choix
+  var motDePasse = prompt("Ce site est privé. Entrez le code d'accès :");
+  if (motDePasse !== "Mamycodepro") {
+    alert("Code incorrect ! Accès refusé.");
+    document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>🔒 Contenu privé</h1>";
+  }
+</script>
+
+
+
+    <!-- =========================
+         PAGE 1
+    ========================== -->
+
+    <section id="page1" class="page active">
+
+        <div class="heart heart1">❤️</div>
+        <div class="heart heart2">♡</div>
+        <div class="heart heart3">💕</div>
+        <div class="heart heart4">♡</div>
+
+        <h1>
+            Salut mon bouboudy ❤️
+        </h1>
+
+        <p>
+            J'espère que ça va.<br><br>
+
+            Tiens juste un truc que je complote
+            depuis quelques temps mon amour.
+        </p>
+
+        <button onclick="showPage(2)">
+            Continuer ?
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 2
+    ========================== -->
+
+    <section id="page2" class="page">
+
+        <div class="heart heart1">💕</div>
+        <div class="heart heart2">❤️</div>
+        <div class="heart heart3">♡</div>
+        <div class="heart heart4">💗</div>
+
+        <h1>
+            Bienvenue ici masiso ❤️
+        </h1>
+
+        <p>
+            Suis juste ce qu'il va te montrer,
+            bonne chance bb.
+        </p>
+
+        <button onclick="showPage(3)">
+            Commencer ?
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 3
+         MOT DE PASSE
+    ========================== -->
+
+    <section id="page3" class="page">
+
+        <div class="heart heart1">♡</div>
+        <div class="heart heart2">❤️</div>
+        <div class="heart heart3">💕</div>
+        <div class="heart heart4">♡</div>
+
+        <h1>
+            🔐 Un petit mot de passe
+        </h1>
+
+        <p>
+            Entre le mot de passe
+            pour continuer.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Mot de passe"
+        >
+
+        <button onclick="checkPassword()">
+            Valider
+        </button>
+
+        <p id="passwordMessage"></p>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 4
+         QUESTION 1
+    ========================== -->
+
+    <section id="page4" class="page">
+
+        <div class="heart heart1">❤️</div>
+        <div class="heart heart2">♡</div>
+        <div class="heart heart3">💕</div>
+        <div class="heart heart4">♡</div>
+
+        <h1>
+            Première épreuve ❤️
+        </h1>
+
+        <h2>
+            Tu m'aimes ?
+        </h2>
+
+        <p id="question1Message"></p>
+
+        <div>
+
+            <button
+                id="yes1"
+                onclick="question1Yes()"
+            >
+                Oui
+            </button>
+
+            <button
+                id="no1"
+                onclick="question1No()"
+            >
+                Non
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 5
+         QUESTION 2
+    ========================== -->
+
+    <section id="page5" class="page">
+
+        <div class="heart heart1">💕</div>
+        <div class="heart heart2">♡</div>
+        <div class="heart heart3">❤️</div>
+        <div class="heart heart4">♡</div>
+
+        <h1>
+            Deuxième épreuve
+        </h1>
+
+        <h2>
+            Tu l'as aimé ?
+        </h2>
+
+        <div>
+
+            <button onclick="question2('oui')">
+                Oui
+            </button>
+
+            <button onclick="question2('non')">
+                Non
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 6
+         QUESTION 3
+    ========================== -->
+
+    <section id="page6" class="page">
+
+        <div class="heart heart1">♡</div>
+        <div class="heart heart2">💕</div>
+        <div class="heart heart3">❤️</div>
+        <div class="heart heart4">♡</div>
+
+        <div id="question3Content">
+
+            <h1>
+                Troisième épreuve ✍️
+            </h1>
+
+            <p>
+                Écrit ici tout ce que tu as
+                sur le cœur et ton point de vue
+                sur notre relation, en 5 lignes.
+            </p>
+
+            <textarea
+                id="heartText"
+                maxlength="500"
+                placeholder="Écris ici..."
+            ></textarea>
+
+            <br>
+
+            <button onclick="finishQuestion3()">
+                C'est fait ?
+            </button>
+
+        </div>
+
+
+        <!-- MESSAGE APRÈS LA QUESTION 3 -->
+
+        <div id="thankYou">
+
+            <div class="thankIcon">
+                ♡
+            </div>
+
+            <h2>
+                Merci pour ta sincérité be vody ❤️
+            </h2>
+
+            <button onclick="continueAfterThankYou()">
+                Be bobota be enao 🥺
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 7
+         QUESTION 4
+    ========================== -->
+
+    <section id="page7" class="page">
+
+        <div class="heart heart1">❤️</div>
+        <div class="heart heart2">♡</div>
+        <div class="heart heart3">💕</div>
+        <div class="heart heart4">♡</div>
+
+        <h1>
+            Quatrième épreuve 🥺
+        </h1>
+
+        <h2>
+            Quel moment tu vas
+            te souvenir toute ta vie ?
+        </h2>
+
+        <div class="choices">
+
+            <label class="choice">
+
+                <input
+                    type="radio"
+                    name="finalChoice"
+                    value="1"
+                    onclick="selectFinalChoice(1)"
+                >
+
+                1 - Notre début de couple
+
+            </label>
+
+
+            <label class="choice">
+
+                <input
+                    type="radio"
+                    name="finalChoice"
+                    value="2"
+                    onclick="selectFinalChoice(2)"
+                >
+
+                2 - Notre histoire
+
+            </label>
+
+
+            <label class="choice">
+
+                <input
+                    type="radio"
+                    name="finalChoice"
+                    value="3"
+                    onclick="selectFinalChoice(3)"
+                >
+
+                3 - Notre bébé qu'on a jamais eu
+
+            </label>
+
+
+            <label class="choice">
+
+                <input
+                    type="radio"
+                    name="finalChoice"
+                    value="4"
+                    onclick="selectFinalChoice(4)"
+                >
+
+                4 - Tout sauf ce qui me concerne
+
+            </label>
+
+        </div>
+
+
+        <button
+            id="finalButton"
+            onclick="finishEverything()"
+            disabled
+        >
+            Valider mon choix
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAGE 8
+         FIN
+    ========================== -->
+
+    <section id="page8" class="page">
+
+        <div class="finalHeart">
+            ♡
+        </div>
+
+        <h1>
+            Couple 4ans kan😭❤️
+        </h1>
+
+        <p>
+            Et voilà...
+            tu es arrivée jusqu'ici ❤️
+        </p>
+
+
+        <div class="gallery">
+
+
+            <div class="photoBox">
+
+                <img
+                    id="photo1"
+                    alt="Souvenir 1"
+                >
+
+                <p>
+                    Tantarantsika mamikely
+                </p>
+
+            </div>
+
+
+            <div class="photoBox">
+
+                <img
+                    id="photo2"
+                    alt="Souvenir 2"
+                >
+
+                <p>
+                    Manja tsika an
+                </p>
+
+            </div>
+
+
+            <div class="photoBox">
+
+                <img
+                    id="photo3"
+                    alt="Souvenir 3"
+                >
+
+                <p>
+                    Dein membo fitiavana be
+                </p>
+
+            </div>
+
+
+            <div class="photoBox">
+
+                <img
+                    id="photo4"
+                    alt="Souvenir 4"
+                >
+
+                <p>
+                    Manana vady manja
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="capture">
+
+            <div class="captureIcon">
+                📸
+            </div>
+
+            <p>
+                Capture ceci et montre-moi
+                que t'as réussi toutes les épreuves ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+  </html>
